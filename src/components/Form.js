@@ -1,30 +1,15 @@
-import React, {useState} from "react";
+import React from "react";
 
-function Form(){
-
-const [SearchName, SetSearchName]=useState("")
-
-function handleInput(event){
-    const value =event.target.value
-    SetSearchName(value)
-}
-
-function apiRequest (event){
-    event.preventDefault();
-    console.log("Clicked")
-}
-
-
-
+function Form(props){
 return <form>
-    <h1>{SearchName}</h1>
+    <h1>{props.SearchName}</h1>
     <input type="text"
     name="searchName"
-    onChange={handleInput}
-    value={SearchName}
+    onChange={props.handleInput}
+    value={props.SearchName}
     placeholder="Search">
     </input>
-    <button onClick={apiRequest}>Submit</button>
+    <button onClick={props.handleSubmit}>Submit</button>
 </form>
 
 }
