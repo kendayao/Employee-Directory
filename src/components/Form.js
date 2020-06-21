@@ -9,7 +9,10 @@ function handleInput(event){
     SetSearchName(value)
 }
 
-
+function apiRequest (event){
+    event.preventDefault();
+    console.log("Clicked")
+}
 
 
 
@@ -21,7 +24,7 @@ return <form>
     value={SearchName}
     placeholder="Search">
     </input>
-    <button>Submit</button>
+    <button onClick={apiRequest}>Submit</button>
 </form>
 
 }
