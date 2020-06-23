@@ -3,35 +3,27 @@ import Form from "./Form"
 import RenderList from "./RenderList"
 import API from "../utils/API"
 
+// render list container component
 function RenderListContainer(){
-    
 const [searchName, SetSearchName]=useState("")
 const [results, SetResults]=useState([])
 
-
+// on page load call directoryRequest function to get users from random user API and display on page
 useEffect( () =>{
     directoryRequest();
 }, []);
 
+// get value typed in search field
  const handleInput = event => {
     const value =event.target.value
     SetSearchName(value)
     }
       
-
+// get filtered array with users names matching value of search field
 const filteredSearch=results.filter(users => {
         const fullName=users.name.first+" "+users.name.last
         return fullName.toLowerCase().includes(searchName.toLowerCase())
     })
-
-const handleSubmit = event =>{
-    event.preventDefault();
-    const searchedUser=results.filter(function(users){
-        return searchName===users.name.first+" "+users.name.last
-    })
-    SetResults(searchedUser) 
-    SetSearchName("")
-}
 
 const directoryRequest=(() => {
     API.search().then(res =>{
@@ -60,13 +52,11 @@ const sortDescend = (() =>{
     SetResults(sortDescend)
 })
 
-  
 return (
         <div>
             <Form handleInput={handleInput}
             handleSubmit={handleSubmit}
             searchName={searchName}
-            
             />
 
             <RenderList users={filteredSearch}
@@ -74,9 +64,6 @@ return (
             sortAscend={sortAscend}
             sortDescend={sortDescend}
             />
-            
-
-
         </div>
     )
 
