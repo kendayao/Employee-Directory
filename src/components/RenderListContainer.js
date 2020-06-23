@@ -42,18 +42,47 @@ function directoryRequest(){
     })
 }
 
+function sortAscend(){
+    var sort= results.sort(function(a,b){
+        return a.dob.age-b.dob.age
+
+    })
+
+    var sortAscend=sort.map(function(users){
+        return(users)
+    })
+   
+    SetResults(sortAscend)
+}
+
+function sortDescend(){
+    var sort= results.sort(function(a,b){
+        return b.dob.age-a.dob.age
+
+    })
+
+    var sortDescend=sort.map(function(users){
+        return(users)
+    })
+   
+    SetResults(sortDescend)
+}
+
   
 return (
         <div>
             <Form handleInput={handleInput}
             handleSubmit={handleSubmit}
             searchName={searchName}
-            users={results}
+            
             />
 
             <RenderList users={results}
-            searchName={searchName}/>
-
+            searchName={searchName}
+            sortAscend={sortAscend}
+            sortDescend={sortDescend}
+            />
+            
 
 
         </div>
