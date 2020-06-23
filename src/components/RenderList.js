@@ -3,9 +3,8 @@ import "./RenderList.css"
 
 
 
-
+// render list component that gets list of users and display them in a table
 function RenderList(props){
-
 return (
     <div>
     <table >

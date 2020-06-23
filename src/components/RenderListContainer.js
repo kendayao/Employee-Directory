@@ -25,6 +25,7 @@ const filteredSearch=results.filter(users => {
         return fullName.toLowerCase().includes(searchName.toLowerCase())
     })
 
+// function that calls to random user API
 const directoryRequest=(() => {
     API.search().then(res =>{
     const results = res.data.results
@@ -32,6 +33,7 @@ const directoryRequest=(() => {
     })
 });
 
+// function to sort age by ascending
 const sortAscend=(() => {
     var sort= results.sort(function(a,b){
         return a.dob.age-b.dob.age
@@ -42,6 +44,7 @@ const sortAscend=(() => {
     SetResults(sortAscend)
 })
 
+// function to sort age by descending
 const sortDescend = (() =>{
     var sort= results.sort(function(a,b){
         return b.dob.age-a.dob.age
@@ -52,6 +55,7 @@ const sortDescend = (() =>{
     SetResults(sortDescend)
 })
 
+// render form and render list component
 return (
         <div>
             <Form handleInput={handleInput}
