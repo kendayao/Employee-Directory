@@ -5,8 +5,8 @@ import API from "../utils/API"
 
 function RenderListContainer(){
     
-const [SearchName, SetSearchName]=useState("")
-const [Results, SetResults]=useState([])
+const [searchName, SetSearchName]=useState("")
+const [results, SetResults]=useState([])
 
 useEffect( () =>{
     directoryRequest();
@@ -15,29 +15,44 @@ useEffect( () =>{
 function handleInput(event){
     const value =event.target.value
     SetSearchName(value)
+
+    const filteredSearch=results.filter(function(users){
+            const fullName=users.name.first+" "+users.name.last
+        return fullName.includes(searchName)
+    })
+    SetResults(filteredSearch)
+    
+    
 }
 
 function handleSubmit (event){
     event.preventDefault();
-    alert("clicked")
+    const searchedUser=results.filter(function(users){
+        return searchName===users.name.first+" "+users.name.last
+    })
+    SetResults(searchedUser)
+    
 }
 
 function directoryRequest(){
     API.search().then(function(res){
     const users = res.data.results
     SetResults(users)
-    console.log(users)
+    
     })
 }
+
   
 return (
         <div>
             <Form handleInput={handleInput}
             handleSubmit={handleSubmit}
-            SearchName={SearchName}
+            searchName={searchName}
+            users={results}
             />
 
-            <RenderList users={Results}/>
+            <RenderList users={results}
+            searchName={searchName}/>
 
 
 
