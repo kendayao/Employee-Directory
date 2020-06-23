@@ -8,63 +8,55 @@ function RenderListContainer(){
 const [searchName, SetSearchName]=useState("")
 const [results, SetResults]=useState([])
 
+
 useEffect( () =>{
     directoryRequest();
 }, []);
 
-function handleInput(event){
+ const handleInput = event => {
     const value =event.target.value
     SetSearchName(value)
+    }
+      
 
-    const filteredSearch=results.filter(function(users){
-            const fullName=users.name.first+" "+users.name.last
-        return fullName.includes(searchName)
+const filteredSearch=results.filter(users => {
+        const fullName=users.name.first+" "+users.name.last
+        return fullName.toLowerCase().includes(searchName.toLowerCase())
     })
-    SetResults(filteredSearch)
-    
-    
-}
 
 function handleSubmit (event){
     event.preventDefault();
     const searchedUser=results.filter(function(users){
         return searchName===users.name.first+" "+users.name.last
     })
-    SetResults(searchedUser)
-    
+    SetResults(searchedUser) 
+    SetSearchName("")
 }
 
 function directoryRequest(){
     API.search().then(function(res){
-    const users = res.data.results
-    SetResults(users)
-    
+    const results = res.data.results
+    SetResults(results)
     })
 }
 
 function sortAscend(){
     var sort= results.sort(function(a,b){
         return a.dob.age-b.dob.age
-
     })
-
-    var sortAscend=sort.map(function(users){
+    const sortAscend=sort.map(function(users){
         return(users)
     })
-   
     SetResults(sortAscend)
 }
 
 function sortDescend(){
     var sort= results.sort(function(a,b){
         return b.dob.age-a.dob.age
-
     })
-
-    var sortDescend=sort.map(function(users){
+    const sortDescend=sort.map(function(users){
         return(users)
     })
-   
     SetResults(sortDescend)
 }
 
@@ -77,7 +69,7 @@ return (
             
             />
 
-            <RenderList users={results}
+            <RenderList users={filteredSearch}
             searchName={searchName}
             sortAscend={sortAscend}
             sortDescend={sortDescend}

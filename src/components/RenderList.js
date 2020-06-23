@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./RenderList.css"
 
 
@@ -10,7 +10,6 @@ console.log(props.users)
 
 return (
     <div>
-        <h1>{props.searchName}</h1>
     <table >
              <thead>
              <tr>
@@ -24,7 +23,7 @@ return (
             <tbody>
             {props.users.map(function(user){
             return <tr key={user.dob.date}>
-                <td><img src={user.picture.thumbnail}  /></td>
+                <td><img src={user.picture.thumbnail} alt="" /></td>
                 <td>{user.name.first} {user.name.last}</td>
                 <td>{user.phone}</td>
                 <td>{user.email}</td>

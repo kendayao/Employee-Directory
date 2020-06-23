@@ -8,7 +8,6 @@ return <form>
     value={props.searchName}
     placeholder="Search Name">
     </input>
-    <button onClick={props.handleSubmit}>Submit</button>
 </form>
 
 }
