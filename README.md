@@ -27,12 +27,12 @@ As a user, I want to be able to view my entire employee directory at once so tha
 ## Installation
 
 
-No installation needed
+No installation needed. If cloning, repo do an npm install.
 
 
 ## Usage
 
-The deployed application link will take you to the homepage. Here, you can type in the name of the transaction and add or subtract funds from the total funds. A graph will render showing your transactions overtime.
+The deployed application link will take you to the homepage. To start searching for an employee type in the name of the employee in the search field. You can sort the list alphabetically by name or numerically by age.
 
 
 
@@ -64,4 +64,4 @@ For any questions, please contact kendayao at kendayao@gmail.com
 
 Deployed application link:
 
-<img src="public/images/budgetapp.png" width="450" height="400">
+<img src="public/images/employeedirectoryapp.png" width="500" height="400">
