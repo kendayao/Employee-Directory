@@ -24,7 +24,7 @@ const filteredSearch=results.filter(users => {
         return fullName.toLowerCase().includes(searchName.toLowerCase())
     })
 
-function handleSubmit (event){
+const handleSubmit = event =>{
     event.preventDefault();
     const searchedUser=results.filter(function(users){
         return searchName===users.name.first+" "+users.name.last
@@ -33,14 +33,14 @@ function handleSubmit (event){
     SetSearchName("")
 }
 
-function directoryRequest(){
-    API.search().then(function(res){
+const directoryRequest=(() => {
+    API.search().then(res =>{
     const results = res.data.results
     SetResults(results)
     })
-}
+});
 
-function sortAscend(){
+const sortAscend=(() => {
     var sort= results.sort(function(a,b){
         return a.dob.age-b.dob.age
     })
@@ -48,9 +48,9 @@ function sortAscend(){
         return(users)
     })
     SetResults(sortAscend)
-}
+})
 
-function sortDescend(){
+const sortDescend = (() =>{
     var sort= results.sort(function(a,b){
         return b.dob.age-a.dob.age
     })
@@ -58,7 +58,7 @@ function sortDescend(){
         return(users)
     })
     SetResults(sortDescend)
-}
+})
 
   
 return (

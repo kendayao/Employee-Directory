@@ -6,8 +6,6 @@ import "./RenderList.css"
 
 function RenderList(props){
 
-console.log(props.users)
-
 return (
     <div>
     <table >
@@ -21,7 +19,7 @@ return (
             </tr>
             </thead>
             <tbody>
-            {props.users.map(function(user){
+            {props.users.map(user=>{
             return <tr key={user.dob.date}>
                 <td><img src={user.picture.thumbnail} alt="" /></td>
                 <td>{user.name.first} {user.name.last}</td>
