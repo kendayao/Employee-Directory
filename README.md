@@ -62,6 +62,6 @@ For any questions, please contact kendayao at kendayao@gmail.com
 
 ## Deployed Application URL
 
-Deployed application link:
+Deployed application link: https://kendayao.github.io/Employee-Directory/
 
 <img src="public/images/employeedirectoryapp.png" width="500" height="400">
