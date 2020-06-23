@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a employee-directory application built with React. The application renders random users in a table and users can sort and filter to quickly find specific employees.
+This is an employee-directory application built with React. The application renders random users in a table and users can sort and filter to quickly find specific employees.
 
 ## Table of Contents
 
@@ -27,7 +27,7 @@ As a user, I want to be able to view my entire employee directory at once so tha
 ## Installation
 
 
-No installation needed. If cloning, repo do an npm install.
+No installation needed. If cloning repo do an npm install.
 
 
 ## Usage
