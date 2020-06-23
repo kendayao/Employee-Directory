@@ -34,39 +34,71 @@ const directoryRequest=(() => {
 });
 
 // function to sort age by ascending
-const sortAscend=(() => {
-    var sort= results.sort(function(a,b){
+const sortAgeAscend=(() => {
+    var sortAge= results.sort(function(a,b){
         return a.dob.age-b.dob.age
     })
-    const sortAscend=sort.map(function(users){
+    const sortAgeAscend=sortAge.map(function(users){
         return(users)
     })
-    SetResults(sortAscend)
+    SetResults(sortAgeAscend)
 })
 
 // function to sort age by descending
-const sortDescend = (() =>{
-    var sort= results.sort(function(a,b){
+const sortAgeDescend = (() =>{
+    var sortAge= results.sort(function(a,b){
         return b.dob.age-a.dob.age
     })
-    const sortDescend=sort.map(function(users){
+    const sortAgeDescend=sortAge.map(function(users){
         return(users)
     })
-    SetResults(sortDescend)
+    SetResults(sortAgeDescend)
 })
 
-// render form and render list component
+// function to sort name by ascending
+const sortNameAscend =(()=>{
+    var sortName = results.sort(function(a, b){
+        if(a.name.first < b.name.first) { return -1; }
+        if(a.name.first > b.name.first) { return 1; }
+        return 0;
+
+   });
+    const sortNameAscend=sortName.map(function(users){
+        return(users)
+})
+    SetResults(sortNameAscend)
+})
+
+// function to sort name by descending
+const sortNameDescend =(()=>{
+    var sortName = results.sort(function(a, b){
+        if(a.name.first > b.name.first) { return -1; }
+        if(a.name.first < b.name.first) { return 1; }
+        return 0;
+
+   });
+    const sortNameDescend=sortName.map(function(users){
+        return(users)
+})
+    SetResults(sortNameDescend)
+})
+
+
+
+
+// render form and render list component with props
 return (
         <div>
             <Form handleInput={handleInput}
-            handleSubmit={handleSubmit}
             searchName={searchName}
             />
 
             <RenderList users={filteredSearch}
             searchName={searchName}
-            sortAscend={sortAscend}
-            sortDescend={sortDescend}
+            sortAgeAscend={sortAgeAscend}
+            sortAgeDescend={sortAgeDescend}
+            sortNameAscend={sortNameAscend}
+            sortNameDescend={sortNameDescend}
             />
         </div>
     )

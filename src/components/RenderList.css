@@ -43,5 +43,8 @@ table {
      margin-right: 10px;
      background-color: #3B6978;
      color: white;
-      padding: 2px
+    padding: 2px;
+    border-radius: 6px;
+    font-size: 10px;
+    
    }

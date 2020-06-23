@@ -11,10 +11,10 @@ return (
              <thead>
              <tr>
                 <th>Image</th>
-                <th>Name</th>
+                <th>Name <button onClick={props.sortNameAscend}>▲</button><button onClick={props.sortNameDescend}>▼</button></th>
                 <th>Phone</th>
                 <th>Email</th>
-                <th>Age <button onClick={props.sortAscend}>▲</button><button onClick={props.sortDescend}>▼</button></th>
+                <th>Age <button onClick={props.sortAgeAscend}>▲</button><button onClick={props.sortAgeDescend}>▼</button></th>
             </tr>
             </thead>
             <tbody>
