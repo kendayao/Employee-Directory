@@ -2,7 +2,7 @@
 
 ## Description
 
-Employee-directory is a web application built with React. Keep track of the employees in your company. Easily sort your employees by their names or age or locate a specific employee by typing in their name. 
+Employee-directory is a web application built with React. Keep track of the employees in your company. Easily sort employees by their names or age or locate a specific employee by typing in their name. 
 
 ## Table of Contents
 
