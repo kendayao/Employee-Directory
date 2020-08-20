@@ -2,11 +2,12 @@
 
 ## Description
 
-This is an employee-directory application built with React. The application renders random users in a table and users can sort and filter to quickly find specific employees.
+Employee-directory is a web application built with React. Keep track of the employees in your company. Easily sort your employees by their names or age or locate a specific employee by typing in their name. 
 
 ## Table of Contents
 
 * [Description](#description)
+* [Technology](#technology)
 * [User Story](#user-story)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -16,6 +17,14 @@ This is an employee-directory application built with React. The application rend
 * [Questions](#questions)
 * [Deployed Application URL](#deployed-application-URL)
 
+## Technology
+
+- REACT
+- CSS
+- Random User API
+- JSX
+- React Hooks
+- HTML
 
 
 ## User Story
@@ -63,5 +72,7 @@ For any questions, please contact kendayao at kendayao@gmail.com
 ## Deployed Application URL
 
 Deployed application link: https://kendayao.github.io/Employee-Directory/
+
+Video demo link: https://kendayao.github.io/Employee-Directory/
 
 <img src="public/images/employeedirectoryapp.png" width="500" height="400">
