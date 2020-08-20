@@ -73,6 +73,6 @@ For any questions, please contact kendayao at kendayao@gmail.com
 
 Deployed application link: https://kendayao.github.io/Employee-Directory/
 
-Video demo link: https://kendayao.github.io/Employee-Directory/
+Video demo link: https://giphy.com/gifs/JQeJfs1fRChoOrNBL8/fullscreen
 
 <img src="public/images/employeedirectoryapp.png" width="500" height="400">
